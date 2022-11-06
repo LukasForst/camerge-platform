@@ -1,6 +1,11 @@
+# system
 .DS_Store
 .idea
+
+# python
 venv
+__pycache__
+
 # these are for cloud function deployment
 cloud_function_deployment
 camerge_service_cloud_function.zip
