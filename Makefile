@@ -1,3 +1,7 @@
+# common
+APP_PORT := 8080
+
+# pipenv
 create-venv: ./venv
 	python -m venv ./venv
 
@@ -10,13 +14,13 @@ install-deps: create-venv
 # backend stuff
 backend-run:
 	source venv/bin/activate && \
-		uvicorn backend:app --reload
+		uvicorn backend:app --reload --port $(APP_PORT)
 
 backend-docker-build:
 	docker build -f backend/Dockerfile -t camerge-backend .
 
 backend-docker-run: backend-docker-build
-	docker run --rm -p 8000:8000 camerge-backend
+	docker run --rm -p $(APP_PORT):8080 camerge-backend
 
 
 # cloud function stuff
@@ -57,4 +61,4 @@ cloud-function-run:
 	# and now run it
 	source venv/bin/activate && \
 		cd $(CLOUD_FUNCTION_OUTPUT_FOLDER) && \
-		functions-framework --target app --debug --port=8000;
+		functions-framework --target app --debug --port=$(APP_PORT);
