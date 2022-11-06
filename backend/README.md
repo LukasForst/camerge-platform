@@ -1,3 +1,3 @@
 # Camerge API
 
-Backend server that uses FastAPI, Python 3.11 and [Camerge](https://github.com/LukasForst/camerge) to merge calendars. 
+Backend server that uses FastAPI, this is module that can be deployed as a standalone service on VM inside docker. 
