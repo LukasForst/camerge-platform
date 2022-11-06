@@ -16,11 +16,13 @@ backend-run:
 	source venv/bin/activate && \
 		uvicorn backend:app --reload --port $(APP_PORT)
 
+BACKEND_DOCKER_IMAGE := camerge-backend
+
 backend-docker-build:
-	docker build -f backend/Dockerfile -t camerge-backend .
+	docker build -f backend/Dockerfile -t $(BACKEND_DOCKER_IMAGE) .
 
 backend-docker-run: backend-docker-build
-	docker run --rm -p $(APP_PORT):8080 camerge-backend
+	docker run --rm -p $(APP_PORT):8080 $(BACKEND_DOCKER_IMAGE)
 
 
 # cloud function stuff
@@ -45,8 +47,7 @@ cloud-function-prepare:
 	# now move main.py to correct location
 	mv $(CLOUD_FUNCTION_OUTPUT_FOLDER)/cloud_function/main.py $(CLOUD_FUNCTION_OUTPUT_FOLDER)/main.py;
 
-cloud-function-deployment:
-	$(MAKE) cloud-function-prepare;
+cloud-function-deployment: cloud-function-prepare
 	cd $(CLOUD_FUNCTION_OUTPUT_FOLDER) && \
  		zip -r ../$(CLOUD_FUNCTION_ZIP) *;
 	rm -rf $(CLOUD_FUNCTION_OUTPUT_FOLDER);
@@ -55,9 +56,7 @@ cloud-function-clean:
 	rm -rf $(CLOUD_FUNCTION_OUTPUT_FOLDER) || true;
 	rm -rf $(CLOUD_FUNCTION_ZIP) || true;
 
-cloud-function-run:
-	# first prepare build
-	$(MAKE) cloud-function-prepare;
+cloud-function-run: cloud-function-prepare
 	# and now run it
 	source venv/bin/activate && \
 		cd $(CLOUD_FUNCTION_OUTPUT_FOLDER) && \
