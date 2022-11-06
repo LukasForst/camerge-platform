@@ -19,12 +19,7 @@ class CalendarService:
         ical = merge_calendars(
             calendar_name='My Availability',
             calendar_domain='my.calendar.example.com',
-            calendar_urls=[
-                # take this google ical stream and anonymize events (no event names shown)
-                ("https://calendar.google.com/calendar/ical/me@me.com/private-x/basic.ics", True),
-                # take this event stream and do not anonymize event summary
-                ("https://p30-caldav.icloud.com/published/2/xxx", False),
-            ],
+            calendar_urls=[],
             # take event availability from these email addresses, these should be your own
             # email addresses associated with the calendar accounts
             known_emails=[

@@ -6,3 +6,4 @@ venv
 *.md
 Makefile
 *.http
+cloud_function_deployment
