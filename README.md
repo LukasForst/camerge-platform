@@ -11,7 +11,7 @@ We're not exactly sure how this is going to be deployed, for that reason we have
 
 Env setup:
 
-1. `make create-venv` creates `venv`
+1. `make venv` creates `venv`
 2. `make install-deps` install dependencies
 3. `source venv/bin/activate` activates python environment
 

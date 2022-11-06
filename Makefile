@@ -1,15 +1,16 @@
 # common
 APP_PORT := 8080
 
-# pipenv
-create-venv: ./venv
+# dependencies
+venv:
 	python -m venv ./venv
 
-install-deps: create-venv
+install-deps: venv
 	source venv/bin/activate && \
 		pip install -r backend/requirements.txt && \
+		pip install -r cloud_function/requirements.txt && \
 		pip install -r common/requirements.txt && \
-		pip install -r cloud_function/requirements.txt
+		pip install -r tests/requirements.txt
 
 # backend stuff
 backend-run:

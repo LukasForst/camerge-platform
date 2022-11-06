@@ -8,3 +8,4 @@ Makefile
 *.http
 cloud_function_deployment
 *.zip
+conf.json

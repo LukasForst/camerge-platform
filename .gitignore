@@ -4,3 +4,4 @@ venv
 # these are for cloud function deployment
 cloud_function_deployment
 camerge_service_cloud_function.zip
+calendars.conf.json

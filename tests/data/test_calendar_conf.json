@@ -1,0 +1,21 @@
+{
+  "firstCalendar": {
+    "calendar_name": "Test Calendar",
+    "calendar_domain": "hello.world.com",
+    "calendar_urls": [
+      {
+        "url": "https://anonymized.example.com",
+        "anonymize": true
+      },
+      {
+        "url": "https://real.example.com",
+        "anonymize": false
+      }
+    ],
+    "known_emails": [
+      "my@example.com",
+      "next@example.com"
+    ],
+    "skip_events_before": "2019-04-19"
+  }
+}
