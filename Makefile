@@ -12,6 +12,11 @@ install-deps: venv
 		pip install -r common/requirements.txt && \
 		pip install -r tests/requirements.txt
 
+# testing
+python-test:
+	source venv/bin/activate && \
+		python -m unittest discover .;
+
 # backend stuff
 backend-run:
 	source venv/bin/activate && \
