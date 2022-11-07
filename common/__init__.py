@@ -38,7 +38,7 @@ class Camerge:
         ical = merge_calendars(
             calendar_name=conf.calendar_name,
             calendar_domain=conf.calendar_domain,
-            calendar_urls=[(c.url, c.anonymize) for c in conf.calendar_urls],
+            calendar_data=[(c.url, c.anonymize) for c in conf.calendar_urls],
             known_emails=conf.known_emails,
             skip_events_before=conf.skip_events_before
         )

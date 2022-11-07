@@ -1,0 +1,16 @@
+{
+  "c1": {
+    "calendar_name": "Real Calendar",
+    "calendar_domain": "real.com",
+    "calendar_urls": [
+      {
+        "url": "https://raw.githubusercontent.com/LukasForst/camerge/master/tests/data/small-calendar.ics",
+        "anonymize": true
+      }
+    ],
+    "known_emails": [
+      "maybe@example.com"
+    ],
+    "skip_events_before": "2019-04-19"
+  }
+}

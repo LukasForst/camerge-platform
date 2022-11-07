@@ -1,2 +1,2 @@
-camerge==0.0.2
+camerge==0.0.3
 dacite==1.6.0
